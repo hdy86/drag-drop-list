@@ -5,8 +5,8 @@ import { toDoState } from "./atoms";
 import Board from "./Components/Board";
 
 const Wrapper = styled.div`
+  position: relative;
   display: flex;
-  max-width: 680px;
   width: 100%;
   margin: 0 auto;
   justify-content: center;
@@ -14,10 +14,10 @@ const Wrapper = styled.div`
   height: 100vh;
 `;
 const Boards = styled.div`
-  display: grid;
+  display: flex;
+  justify-content: center;
   width: 100%;
   gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
 `;
 
 function App() {

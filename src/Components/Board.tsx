@@ -9,15 +9,15 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 300px;
-  min-height: 300px;
+  min-height: 400px;
   background-color: ${(props) => props.theme.boardColor};
-  padding: 15px 5px;
+  padding: 20px 10px;
   border-radius: 5px;
 `;
 const Title = styled.h2`
   text-align: center;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: 18px;
 `;
 
@@ -34,17 +34,20 @@ const Area = styled.div<IAreaProps>`
       : props.isDraggingFromThis
       ? "#dfe6e9"
       : "transparent"};
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
 `;
 
 const Form = styled.form`
   width: 100%;
-
-  input {
-    width: 100%;
-  }
+  margin-bottom: 10px;
+`;
+const Input = styled.input`
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #8ebbf6;
+  border-radius: 5px;
 `;
 
 interface IBoardProps {
@@ -77,7 +80,7 @@ function Board({ toDos, boardId }: IBoardProps) {
       <Title>{boardId}</Title>
 
       <Form onSubmit={handleSubmit(onValid)}>
-        <input
+        <Input
           {...register("toDo", { required: true })}
           type="text"
           placeholder={`Add task on ${boardId}`}
