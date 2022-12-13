@@ -10,6 +10,7 @@ const Card = styled.div<{ isDragging: boolean }>`
   margin-bottom: 5px;
   padding: 10px;
   border-radius: 5px;
+  text-align: left;
 `;
 
 interface IDragabbleCardProps {

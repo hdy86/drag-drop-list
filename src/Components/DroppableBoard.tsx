@@ -6,13 +6,27 @@ import { ITodo, toDoState } from "../atoms";
 import { useSetRecoilState } from "recoil";
 
 const Wrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
-  width: 300px;
   min-height: 400px;
   background-color: ${(props) => props.theme.boardColor};
   padding: 20px 10px;
   border-radius: 5px;
+`;
+const DeleteBtn = styled.button`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: #8ebbf6;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
 `;
 const Title = styled.h2`
   text-align: center;
@@ -74,9 +88,17 @@ function Board({ toDos, boardId }: IBoardProps) {
     });
     setValue("toDo", "");
   };
+  const onDeleteCategory = () => {
+    setToDos((allBoards) => {
+      const boardCopy = { ...allBoards };
+      delete boardCopy[boardId];
+      return boardCopy;
+    });
+  };
 
   return (
     <Wrapper>
+      <DeleteBtn onClick={onDeleteCategory}>X</DeleteBtn>
       <Title>{boardId}</Title>
 
       <Form onSubmit={handleSubmit(onValid)}>
