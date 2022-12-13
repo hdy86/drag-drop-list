@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/drag-drop-list/static/js/main.cae37d02.js",
+    "main.js": "/drag-drop-list/static/js/main.67bfc9f9.js",
     "index.html": "/drag-drop-list/index.html",
-    "main.cae37d02.js.map": "/drag-drop-list/static/js/main.cae37d02.js.map"
+    "main.67bfc9f9.js.map": "/drag-drop-list/static/js/main.67bfc9f9.js.map"
   },
   "entrypoints": [
-    "static/js/main.cae37d02.js"
+    "static/js/main.67bfc9f9.js"
   ]
 }
