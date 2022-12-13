@@ -35,11 +35,6 @@ const Title = styled.h2`
   font-size: 18px;
 `;
 
-interface IAreaProps {
-  isDraggingOver: boolean;
-  isDraggingFromThis: boolean;
-}
-
 const Area = styled.div<IAreaProps>`
   flex-grow: 1;
   background-color: ${(props) =>
@@ -64,6 +59,10 @@ const Input = styled.input`
   border-radius: 5px;
 `;
 
+interface IAreaProps {
+  isDraggingOver: boolean;
+  isDraggingFromThis: boolean;
+}
 interface IBoardProps {
   toDos: ITodo[];
   boardId: string;
